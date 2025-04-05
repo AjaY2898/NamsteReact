@@ -1,16 +1,5 @@
-// const heading = document.createElement("h1");
-// heading.innerHTML = "seperate file";
-
-// const root = document.getElementById("root");
-// root.appendChild(heading);
-
-
-// <div id ="parent">
-//     <div id="child">
-//         <h1>hello child</h1>
-//         <h2>siblings h1</h2>
-//     </div>
-// </div>
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const heading = React.createElement("div",{id:"parent"},
     React.createElement("div",{id:"child"},
@@ -18,12 +7,6 @@ const heading = React.createElement("div",{id:"parent"},
     )
 );
 
-
-// const heading = React
-//     .createElement("h1"
-//         , {id:"heading"}
-//         , "Hello World From React");
-
-const reactSt = ReactDOM.createRoot(document.getElementById("reactScript"));
+const reactSt = ReactDOM.createRoot(document.getElementById("root"));
 
 reactSt.render(heading);
