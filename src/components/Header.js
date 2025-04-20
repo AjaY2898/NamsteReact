@@ -1,23 +1,17 @@
 import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/Constants";
 import navItems from "../utils/NavItems";
+import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
-  const [navbarItems, setNavbarItems] = useState([]);
   const [btnName, setBtnName] = useState("Login");
+
+  const onlineStatus = useOnlineStatus();
 
   // if no dependecy array => useEffect will get called on every render
   // if dependency array is empty => useEffect will get called on initial render(just Once)
   // if dependency array [btnName] => called everytime when [btnName] is updated
-  useEffect(() => {}, []);
-
-  const onLogin = () => {
-    btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-  };
-
-  const isLoggedIn = () => {
-    btnName === "Logout" ? setNavbarItems(navItems) : setNavbarItems([]);
-  };
 
   return (
     <div className="header">
@@ -26,9 +20,20 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          {navbarItems?.map((item) => (
-            <li>{item.title}</li>
-          ))}
+          <li>Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
+          <li>Cart</li>
           <button
             className="login-btn"
             onClick={() => {
