@@ -51,3 +51,13 @@ APP chunking
 code spliter
 dynamic loading
 lazy loading -->
+
+//ways to implement css
+
+1. Sass Scss
+2. Styled components
+3. material Ui
+4. Tailwind CSS
+5. bootStrap
+6. Chakra UI
+7. AntUI

@@ -1,0 +1,16 @@
+<div className="chat-page">
+    <div className="chat-message">
+        <div className="chatting-message">
+            {message.map((msg,index) => (
+                <div key={index} 
+                className = {`chat-bubble ${msg.type === 'user' ? 'user-msg' : 'bot-msg'}`}>
+                {msg.text}
+                </div>
+            ))}
+        </div>
+    </div>
+    <div className="chat-msg-box"> 
+        <MessageBox onSend={handleOnSend}/>
+    </div>
+
+</div>
